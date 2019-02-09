@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import gym
+from gym import wrappers
 import ptan
 import argparse
 import numpy as np
@@ -14,10 +15,17 @@ from tensorboardX import SummaryWriter
 
 BATCH_SIZE = 32
 BARS_COUNT = 10
+'''
+经过多少步来同步target(global?) network
+'''
 TARGET_NET_SYNC = 1000
+
 DEFAULT_STOCKS = "data/YNDX_160101_161231.csv"
 DEFAULT_VAL_STOCKS = "data/YNDX_150101_151231.csv"
 
+'''
+
+'''
 GAMMA = 0.99
 
 REPLAY_SIZE = 100000
